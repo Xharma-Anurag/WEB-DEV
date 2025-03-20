@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Anurag Sharma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #0f0fb3, #203a43, #940814);
+            color: white;
+        }
+        
+        .card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+        }
+        
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.3);
+        }
+        
+        .button {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .button:hover {
+            background: linear-gradient(to right, #feb47b, #ff7e5f);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body class="text-gray-100">
+    <div class="container mx-auto p-6 text-center">
+        <header class="py-6">
+            <img src="11111.jpg" alt="Anurag Sharma" class="mx-auto rounded-full w-56 h-56 border-4 border-white shadow-lg">
+            <h1 class="text-5xl font-bold mt-4">Anurag Sharma</h1>
+            <p class="text-lg text-gray-300">Web Developer | Engineer</p>
+        </header>
+
+        <section class="card my-6">
+            <h2 class="text-2xl font-bold mb-4">About Me</h2>
+            <p>I am a passionate web developer with expertise in C, C++, Python, and HTML. I enjoy creating dynamic and responsive websites with innovative designs. I also have a strong interest in UI/UX design, content creation, and problem-solving through
+                coding.
+            </p>
+        </section>
+
+        <section class="grid md:grid-cols-2 gap-6">
+            <div class="card">
+                <h2 class="text-2xl font-bold mb-4">Skills</h2>
+                <ul class="list-disc pl-6">
+                    <li>Web Development (HTML, CSS, JavaScrip,)</li>
+                    <li>Programming (C, C++, Python, Java)</li>
+                    <li>Content Writing & SEO</li>
+                    <li>Logo & Graphic Designing (Adobe Photoshop, Canva)</li>
+                    <li>Database Management (MySQL(Basics))</li>
+                    <li>Version Control (Git, GitHub)</li>
+                    <li>Problem Solving & Competitive Programming</li>
+                </ul>
+            </div>
+            <section class="grid md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h2 class="text-2xl font-bold mb-4">Skills</h2>
+                    <div class="progress">
+                        <div style="width: 90%"></div>
+                    </div>
+                    <p>Web Development (HTML, CSS, JavaScript, React)</p>
+                    <div class="progress">
+                        <div style="width: 85%"></div>
+                    </div>
+                    <p>Programming (C, C++, Python, Java)</p>
+                    <div class="progress">
+                        <div style="width: 80%"></div>
+                    </div>
+                    <p>Content Writing & SEO</p>
+                </div>
+                <div class="card">
+                    <h2 class="text-2xl font-bold mb-4">Projects</h2>
+                    <div class="overflow-hidden relative w-full h-64">
+                        <div id="carousel" class="absolute w-full flex space-x-4">
+                            <div class="w-full card">Gambling Console App</div>
+                            <div class="w-full card">Portfolio Website</div>
+                            <div class="w-full card">E-commerce Website</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card my-6">
+                <h2 class="text-2xl font-bold mb-4">Contact Me</h2>
+                <form class="space-y-4">
+                    <input type="text" placeholder="Your Name" class="w-full p-2 border rounded" required>
+                    <input type="email" placeholder="Your Email" class="w-full p-2 border rounded" required>
+                    <textarea placeholder="Your Message" class="w-full p-2 border rounded" required></textarea>
+                    <button type="submit" class="button">Send</button>
+                </form>
+            </section>
+    </div>
+</body>
+
+</html>

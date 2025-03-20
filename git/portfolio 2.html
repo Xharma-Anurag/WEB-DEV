@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Anurag Sharma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+            transition: background 0.5s ease-in-out;
+        }
+        
+        .dark-mode {
+            background: linear-gradient(to right, #1a1a2e, #16213e, #0f3460);
+            color: #ddd;
+        }
+        
+        .card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+        }
+        
+        .card:hover {
+            transform: rotateY(10deg) scale(1.05);
+            box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.3);
+        }
+        
+        .button {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .button:hover {
+            background: linear-gradient(to right, #feb47b, #ff7e5f);
+            transform: scale(1.1);
+        }
+        
+        .progress {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress div {
+            height: 100%;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            width: 0;
+            transition: width 1.5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="text-gray-100">
+    <div class="container mx-auto p-6 text-center">
+        <header class="py-6">
+            <img src="11111.jpg" alt="Anurag Sharma" class="mx-auto rounded-full w-56 h-56 border-4 border-white shadow-lg">
+            <h1 class="text-5xl font-bold mt-4">
+                <span id="typing"></span>
+            </h1>
+            <p class="text-lg text-gray-300"> Passionate Coder | Web Developer </p>
+            <button onclick="toggleMode()" class="button mt-4">Toggle Mode</button>
+        </header>
+
+        <section class="card my-6">
+            <h2 class="text-2xl font-bold mb-4">About Me</h2>
+            <p>I am a passionate web developer with expertise in C, C++, Python, and HTML. I enjoy creating dynamic and responsive websites with innovative designs.</p>
+        </section>
+
+        <section class="grid md:grid-cols-2 gap-6">
+            <div class="card">
+                <h2 class="text-2xl font-bold mb-4">Skills</h2>
+
+                <p>Web Development (HTML, CSS, JavaScript, React)</p>
+                <div class="progress">
+                    <div style="width: 85%"></div>
+                </div>
+
+                <p>Programming (C, C++, Python, Java)</p>
+                <div class="progress">
+                    <div style="width: 65%"></div>
+                </div>
+
+                <p>Content Writing & SEO</p>
+                <div class="progress">
+                    <div style="width: 60%"></div>
+                </div>
+            </div>
+            <div class="card">
+                <h2 class="text-2xl font-bold mb-4">Projects</h2>
+                <div class="overflow-hidden relative w-full h-64">
+                    <div id="carousel" class="absolute w-full flex space-x-4">
+                        <div class="w-full card">Gambling Console App</div>
+                        <div class="w-full card">Portfolio Website</div>
+                        <div class="w-full card">E-commerce Website</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card my-6">
+            <h2 class="text-2xl font-bold mb-4">Contact Me</h2>
+            <form class="space-y-4">
+                <input type="text" placeholder="Your Name" class="w-full p-2 border rounded" required>
+                <input type="email" placeholder="Your Email" class="w-full p-2 border rounded" required>
+                <textarea placeholder="Your Message" class="w-full p-2 border rounded" required></textarea>
+                <button type="submit" class="button">Send</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        new Typed("#typing", {
+            strings: ["Anurag Sharma", "Web Developer", "Designer & Creator"],
+            typeSpeed: 100,
+            backSpeed: 50,
+            loop: true
+        });
+
+        function toggleMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+
+        gsap.to("#carousel", {
+            x: "-200%",
+            duration: 8,
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut"
+        });
+
+        document.querySelectorAll(".progress div").forEach((el) => {
+            setTimeout(() => {
+                el.style.width = el.getAttribute("style").split(":")[1];
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>
